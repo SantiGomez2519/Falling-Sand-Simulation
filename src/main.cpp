@@ -1,25 +1,27 @@
 #include <raylib.h>
-#include "ball.h"
+#include "grid.h"
 
-int main() 
-{
-    const Color darkGreen = {20, 160, 133, 255};
+int main() {
+    // Background color
+    const Color darkGreen = {255, 255, 255, 255};
     
+    // Screen dimensions
     constexpr int screenWidth = 800;
     constexpr int screenHeight = 600;
+
+    // Initialize window
+    InitWindow(screenWidth, screenHeight, "Falling Sand Simulator!");
+    SetTargetFPS(60); // Set FPS
+
+    // Grid
+    Grid grid(80, 60);
     
-    Ball ball;
-    
-    InitWindow(screenWidth, screenHeight, "My first RAYLIB program!");
-    SetTargetFPS(60);
-    
-    while (!WindowShouldClose())
-    {
-        ball.Update();
-        
+
+    while (!WindowShouldClose()) {
+        grid.draw();
+
         BeginDrawing();
             ClearBackground(darkGreen);
-            ball.Draw();
         EndDrawing();
     }
     
