@@ -1,12 +1,13 @@
 #include <raylib.h>
 #include <iostream>
+#include <vector>
 
 class Sand {
     private:
         Color color = DARKBLUE;
         float x;
         float y;
-        int size;
+        float size;
         int gravity;
 
     public:
@@ -15,4 +16,10 @@ class Sand {
         void draw();
 
         void update();
+
+        void updateSandUnder(std::vector<Sand> &sand);
+
+        Vector2 getPos() {
+            return {x, y};
+        }
 };

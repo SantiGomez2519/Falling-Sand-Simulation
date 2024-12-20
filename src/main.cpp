@@ -6,6 +6,16 @@
 #include "grid.h"
 #include "sand.h"
 
+
+bool isSandUnder(Vector2 position, std::vector<Sand> &sand){
+    for (auto &s : sand) {
+        if (s.getPos().x == position.x + 10 || s.getPos().y == position.y + 10) {
+            return true;
+        }
+    }
+    return false;
+}
+
 int main() {
     // Background color
     const Color darkGreen = {255, 255, 255, 255};
@@ -30,12 +40,16 @@ int main() {
     while (!WindowShouldClose()) {
         // Update
         for (auto &s : sand) {
-            s.update();
+            if (!isSandUnder(s.getPos(), sand)) {
+                s.update();
+            } else {
+                s.updateSandUnder(sand);
+            }
         }
 
         BeginDrawing();
             ClearBackground(darkGreen);
-            if (IsMouseButtonDown(MOUSE_LEFT_BUTTON)) {
+            if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
                 sand.push_back(Sand());
             }
 
