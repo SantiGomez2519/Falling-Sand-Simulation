@@ -22,4 +22,8 @@ class Sand {
         Vector2 getPos() {
             return {x, y};
         }
+
+        int getSize() {
+            return size;
+        }
 };

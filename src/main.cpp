@@ -8,8 +8,9 @@
 
 
 bool isSandUnder(Vector2 position, std::vector<Sand> &sand){
+    // Check if there is sand under or next to the current sand
     for (auto &s : sand) {
-        if (s.getPos().x == position.x + 10 || s.getPos().y == position.y + 10) {
+        if (s.getPos().x == position.x && s.getPos().y == position.y + s.getSize()) {
             return true;
         }
     }
