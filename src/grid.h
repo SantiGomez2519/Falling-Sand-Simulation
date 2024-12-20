@@ -1,6 +1,9 @@
 #pragma once
 #include <vector>
+#include "sand.h"
 
+#ifndef GRID_H
+#define GRID_H
 class Grid {
     private:
         int rows;
@@ -12,5 +15,11 @@ class Grid {
         Grid();
         void draw();
         void update(std::vector<Sand> &sand);
-        void addSand(int x, int y);
+        void addSand(int x, int y, std::vector<Sand> &sand);
+
+        int getSquareSize() {
+            return squareSize;
+        }
 };
+
+#endif

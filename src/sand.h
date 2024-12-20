@@ -1,12 +1,16 @@
+#pragma once
 #include <raylib.h>
 #include <iostream>
 #include <vector>
 
+#ifndef SAND_H
+#define SAND_H
+
 class Sand {
     private:
         Color color = DARKBLUE;
-        float x;
-        float y;
+        int x;
+        int y;
         float size;
         int gravity;
 
@@ -19,11 +23,26 @@ class Sand {
 
         void updateSandUnder(std::vector<Sand> &sand);
 
-        Vector2 getPos() {
-            return {x, y};
+        int getX() {
+            return x;
+        }
+
+        int getY() {
+            return y;
+        }
+
+        void setX(int x) {
+            this->x = x;
+        }
+
+        void setY(int y) {
+            this->y = y;
         }
 
         int getSize() {
             return size;
         }
+
+
 };
+#endif 
