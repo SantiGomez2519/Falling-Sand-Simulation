@@ -9,6 +9,9 @@ class Grid {
         int rows;
         int cols;
         int squareSize = 10;
+        int colorR = 0; // Red component
+        int colorG = 128; // Green component
+        int colorB = 255; // Blue component
         std::vector<std::vector<int>> matrix; // 0 for empty, 1 for sand
 
     public:

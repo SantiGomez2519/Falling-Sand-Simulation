@@ -7,16 +7,6 @@
 #include "sand.h"
 
 
-// bool isSandUnder(Vector2 position, std::vector<Sand> &sand){
-//     // Check if there is sand under or next to the current sand
-//     for (auto &s : sand) {
-//         if (s.getPos().x == position.x && s.getPos().y == position.y + s.getSize()) {
-//             return true;
-//         }
-//     }
-//     return false;
-// }
-
 int main() {
     // Background color
     const Color black = BLACK;
@@ -43,7 +33,7 @@ int main() {
         grid.update(sand);
 
         BeginDrawing();
-            if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+            if (IsMouseButtonDown(MOUSE_LEFT_BUTTON)) {
                 int x = GetMouseX() / grid.getSquareSize();
                 int y = GetMouseY() / grid.getSquareSize();
 

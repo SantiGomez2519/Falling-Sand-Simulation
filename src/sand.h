@@ -8,7 +8,7 @@
 
 class Sand {
     private:
-        Color color = DARKBLUE;
+        Color color;
         int x;
         int y;
         float size;
