@@ -2,11 +2,11 @@
 
 class Grid {
     private:
-        int rows;
-        int cols;
+        // int rows;
+        // int cols;
         int squareSize = 10;
 
     public:
-        Grid(int rows, int cols);
+        Grid();
         void draw();
 };

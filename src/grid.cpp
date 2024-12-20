@@ -1,9 +1,9 @@
 #include "grid.h"
 #include <raylib.h>
 
-Grid::Grid(int rows, int cols) {
-    this->rows = rows;
-    this->cols = cols;
+Grid::Grid() {
+    // this->rows = rows;
+    // this->cols = cols;
 }
 
 void Grid::draw() {
